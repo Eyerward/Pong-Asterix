@@ -7,13 +7,20 @@ class Tableau1 extends Phaser.Scene{
      * Précharge les assets
      */
     preload(){
-        this.load.image('ball','assets/cercle.png')
-        this.load.image('square','assets/carre.png')
+        this.load.image('wpp','assets/carte.png');
+        this.load.image('ball','assets/gourde.png');
+        this.load.image('asterix','assets/asterix.png');
+        this.load.image('cesar','assets/cesar.png');
+        this.load.image('mur','assets/palissade.png');
     }
 
     create(){
         this.hauteur = 500
         this.largeur = 1000
+
+        //Fond d'ecran
+        this.wpp=this.add.image(this.largeur/2,this.hauteur/2,'wpp').setOrigin(0,0);
+
 
         //Mur Haut
         this.haut=this.physics.add.image(0,0,'square').setOrigin(0,0);
