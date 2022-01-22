@@ -19,7 +19,8 @@ class Tableau1 extends Phaser.Scene{
         this.largeur = 1000
 
         //Fond d'ecran
-        this.wpp=this.add.image(this.largeur/2,this.hauteur/2,'wpp').setOrigin(0,0);
+        this.wpp=this.add.image(-50,-200,'wpp').setOrigin(0,0);
+        this.wpp.setScale(0.55);
 
 
         //Mur Haut
