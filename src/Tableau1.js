@@ -12,6 +12,7 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('asterix','assets/asterix.png');
         this.load.image('cesar','assets/cesar.png');
         this.load.image('mur','assets/palissade.png');
+        this.load.image('square','assets/carre.png');
     }
 
     create(){
@@ -29,30 +30,38 @@ class Tableau1 extends Phaser.Scene{
         this.haut.body.setAllowGravity(false);
         this.haut.setImmovable(true);
 
+        this.paliHaut=this.add.tileSprite(0,0,this.largeur,40,'mur').setOrigin(0,0);
+        this.paliHaut.flipY = true;
+
         //Mur Bas
         this.bas=this.physics.add.image(0,this.hauteur-20,'square').setOrigin(0,0);
         this.bas.setDisplaySize(this.largeur,20);
         this.bas.body.setAllowGravity(false);
         this.bas.setImmovable(true);
 
+        this.paliHaut=this.add.tileSprite(0,this.hauteur-40,this.largeur,40,'mur').setOrigin(0,0);
+
         //Balle
         this.balle = this.physics.add.image(this.largeur/2,this.hauteur/2,'ball').setOrigin(0,0);
-        this.balle.setDisplaySize(20,20);
+        this.balle.setDisplaySize(50,50);
         this.balle.body.setBounce(1.2,1.2);
         this.balle.body.setVelocityX(Phaser.Math.Between(-200,200));
         this.balle.body.setVelocityY(Phaser.Math.Between(-50,50));
         this.balle.body.setMaxVelocity(1000,1000);
 
         //Raquette Gauche
-        this.gauche=this.physics.add.image(10,this.hauteur/2,'square').setOrigin(0,0);
-        this.gauche.setDisplaySize(20,100);
+        this.gauche=this.physics.add.image(10,this.hauteur/2,'asterix').setOrigin(0,0);
+        this.gauche.setScale(0.2);
+        //this.gauche.setDisplaySize(50,100);
         this.gauche.body.setAllowGravity(false);
         this.gauche.setImmovable(true);
         this.gauche.body.setVelocityY(0);
 
         //Raquette Droite
-        this.droite=this.physics.add.image(this.largeur-40,this.hauteur/2,'square').setOrigin(0,0);
-        this.droite.setDisplaySize(20,100);
+        this.droite=this.physics.add.image(this.largeur-70,this.hauteur/2,'cesar').setOrigin(0,0);
+        this.droite.setScale(0.4);
+        this.droite.flipX = true;
+        //this.droite.setDisplaySize(20,100);
         this.droite.body.setAllowGravity(false);
         this.droite.setImmovable(true);
         this.droite.body.setVelocityY(0);
@@ -175,14 +184,14 @@ class Tableau1 extends Phaser.Scene{
         if(this.gauche.y < 20){
             this.gauche.y = 20
         }
-        if(this.gauche.y > this.hauteur-120){
-            this.gauche.y = this.hauteur-120
+        if(this.gauche.y > this.hauteur-170){
+            this.gauche.y = this.hauteur-170
         }
         if(this.droite.y < 20){
             this.droite.y = 20
         }
-        if(this.droite.y > this.hauteur-120){
-            this.droite.y = this.hauteur-120
+        if(this.droite.y > this.hauteur-200){
+            this.droite.y = this.hauteur-200
         }
     }
 }
