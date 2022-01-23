@@ -13,6 +13,7 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('cesar','assets/cesar.png');
         this.load.image('mur','assets/palissade.png');
         this.load.image('square','assets/carre.png');
+        this.load.audio('theme','assets/theme.MP3');
     }
 
     create(){
@@ -86,6 +87,11 @@ class Tableau1 extends Phaser.Scene{
         this.jGauche = new Joueur('P1','jGauche');
         this.jDroite = new Joueur('P2','jDroite');
 
+        this.theme = this.sound.add('theme');
+
+        alert('Cliquez pour commencer');
+
+        this.theme.play();
 
         this.initkeyboard()
     }
