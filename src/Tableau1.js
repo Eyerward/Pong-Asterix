@@ -8,7 +8,7 @@ class Tableau1 extends Phaser.Scene{
      */
     preload(){
         this.load.image('wpp','assets/carte.png');
-        this.load.image('ball','assets/gourde.png');
+        this.load.image('ball','assets/gourde3.png');
         this.load.image('asterix','assets/asterix.png');
         this.load.image('cesar','assets/cesar.png');
         this.load.image('mur','assets/palissade.png');
@@ -44,7 +44,7 @@ class Tableau1 extends Phaser.Scene{
 
         //Balle
         this.balle = this.physics.add.image(this.largeur/2,this.hauteur/2,'ball').setOrigin(0,0);
-        this.balle.setDisplaySize(50,50);
+        //this.balle.setDisplaySize(50,50);
         this.balle.body.setBounce(1.2,1.2);
         this.balle.body.setVelocityX(Phaser.Math.Between(-200,200));
         this.balle.body.setVelocityY(Phaser.Math.Between(-50,50));
