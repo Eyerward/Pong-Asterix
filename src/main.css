@@ -5,7 +5,7 @@ body{
     text-align: center;
 }
 a{
-    color: #808080;
+    color: #ffffff;
     text-transform: uppercase;
     text-decoration: none;
     transition: color 1s;
@@ -29,7 +29,7 @@ canvas{
     outline: 1px solid #333;
 }
 #scores{
-    color: #808080;
+    color: #ffffff;
     font-size : 5vw;
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@ canvas{
 }
 
 .score{
-    color:#808080;
+    color:#ffff00;
 }
 .name{
     font-size: 3vw;

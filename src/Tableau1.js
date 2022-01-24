@@ -59,7 +59,7 @@ class Tableau1 extends Phaser.Scene{
         this.gauche.body.setVelocityY(0);
 
         //Raquette Droite
-        this.droite=this.physics.add.image(this.largeur-70,this.hauteur/2,'cesar').setOrigin(0,0);
+        this.droite=this.physics.add.image(this.largeur-80,this.hauteur/2,'cesar').setOrigin(0,0);
         this.droite.setScale(0.4);
         this.droite.flipX = true;
         //this.droite.setDisplaySize(20,100);
@@ -84,8 +84,8 @@ class Tableau1 extends Phaser.Scene{
 
         /**On compte les points sinon on s'emmerde**/
 
-        this.jGauche = new Joueur('P1','jGauche');
-        this.jDroite = new Joueur('P2','jDroite');
+        this.jGauche = new Joueur('Asterix','jGauche');
+        this.jDroite = new Joueur('Cesar','jDroite');
 
         this.theme = this.sound.add('theme');
 
